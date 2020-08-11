@@ -1,16 +1,16 @@
 {
-  "name": "react-mixpanel-provider",
+  "name": "react-mix-panel",
   "version": "1.0.0",
   "description": "mixpanel provider",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/spiehdid/react-mixpanel-provider.git"
+    "url": "git+https://github.com/spiehdid/react-mix-panel-provider.git"
   },
   "bugs": {
-    "url": "https://github.com/spiehdid/react-mixpanel-provider/issues"
+    "url": "https://github.com/spiehdid/react-mix-panel-provider/issues"
   },
-  "homepage": "https://github.com/spiehdid/react-mixpanel-provider#readme",
+  "homepage": "https://github.com/spiehdid/react-mix-panel-provider#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
