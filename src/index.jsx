@@ -1,4 +1,4 @@
-import { createContext, useContext } from 'react';
+import React, { createContext, useContext } from 'react';
 import mixpanel from 'mixpanel-browser';
 
 export const MixPanelContext = createContext();
