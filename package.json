@@ -1,12 +1,23 @@
 {
   "name": "react-mixpanel-provider-component",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "mixpanel provider",
-  "main": "index.js",
+  "source": "src/index.tsx",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/spiehdid/react-mixpanel-provider-component.git"
   },
+  "keywords": [
+    "react",
+    "mixpanel",
+    "mixpanel-provider",
+    "mixpanel-component",
+    "mixpanel-provider-component",
+    "component",
+    "react-component"
+  ],
   "bugs": {
     "url": "https://github.com/spiehdid/react-mixpanel-provider-component/issues"
   },
@@ -15,7 +26,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "dev": "tsc --watch",
-    "prettier": "npx prettier --write src/* test/* example/*",
+    "prettier": "npx prettier --write src/*",
     "tslint": "tslint -p tslint -p tsconfig.json",
     "codestyle": "npm run prettier && npm run tslint"
   },
@@ -31,10 +42,13 @@
     "prettier": "^2.0.5",
     "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.7",
+    "react": "^16.13.1"
   },
   "dependencies": {
-    "mixpanel-browser": "^2.38.0",
-    "react": "^16.13.1"
+    "mixpanel-browser": "^2.38.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.0.0"
   }
 }

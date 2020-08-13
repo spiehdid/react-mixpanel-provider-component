@@ -1,16 +1,8 @@
-import { createContext, useContext } from 'react'
-import mixpanel from 'mixpanel-browser'
+import { createContext, useContext } from 'react';
 
-export const MixPanelContext = createContext()
-export default useMixPanel = () => useContext(MixPanelContext)
+export const MixPanelContext = createContext();
+export const useMixPanel = () => useContext(MixPanelContext);
 
-export const MixPanelProvider = ({ children }) => {
+export const MixPanelProvider = ({ children, mixpanel }) => <MixPanelContext.Provider value={mixpanel}>{children}</MixPanelContext.Provider>;
 
-    return (
-        <MixPanelContext.Provider value={mixpanel}>
-            {children}
-        </MixPanelContext.Provider>
-    )
-}
-export const Mixpanel = mixpanel
-
+export default Mixpanel = mixpanel;
