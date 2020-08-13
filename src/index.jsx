@@ -5,7 +5,7 @@ export const MixPanelContext = createContext();
 export const useMixPanel = () => useContext(MixPanelContext);
 
 export const MixPanelProvider = ({ children }) => (
-  <MixPanelContext.Provider value={mixpanel}>{children}</MixPanelContext.Provider>
+  <MixPanelContext.Provider value={{ mixpanel }}>{children}</MixPanelContext.Provider>
 );
 
 const Mixpanel = mixpanel;
