@@ -12,32 +12,21 @@ The project provides simple wrapper over [mixpanel-browser](https://github.com/m
 
 Then use it like you would use [Context API](https://reactjs.org/docs/context.html). In your root `App.js` :
 
-1. Import required modules:
-
-``` 
-import mixpanel from 'mixpanel-browser';
-import { MixPanelProvider } from 'react-mixpanel-provider-component';
-```
-
-2. Initialize your Mixpanel instance:
-
-``` 
-mixpanel.init("TOKEN");
-```
-
-3. Render your app using `MixpanelProvider` :
+Render your app using `MixpanelProvider`
 
 ``` jsx
+import { MixPanelProvider } from 'react-mixpanel-provider-component';
+
 ReactDOM.render(
-    <MixpanelProvider mixpanel={mixpanel}>
+    <MixpanelProvider>
         <App/>
     </MixpanelProvider>,
     document.getElementById('root')
 );
 ```
 
-4. Then, everytime you'd like to use mixpanel you can get it using `useMixPanel` :
-
+ `Don't forget to initialize your Mixpanel instance `
+ 
  `Functional component`
 ```jsx 
 import React, { useEffect } from 'react'
@@ -48,6 +37,7 @@ const App = () => {
     const { mixpanel } = useMixPanel()
 
     useEffect(() => {
+       mixpanel.init("TOKEN");
        mixpanel.track('logged to site')
     }, [])
 
@@ -63,7 +53,8 @@ import { MixPanelContext } from 'react-mixpanel-provider-component';
 
 class App extends React.Component {
     componentDidMount() {
-        this.context.mixpanel.track('Hello mixpanel!');
+        mixpanel.init("TOKEN");
+        this.context.mixpanel.track('logged to site');
     }
 
     render() {
@@ -80,7 +71,15 @@ App.contextType = MixPanelContext;
 ``` js
 import Mixpanel from 'react-mixpanel-provider-component';
 
+let isInit = false
+
 export default mixPanelHandler = (type, payload) => {
+
+    if (!isInit) {
+        Mixpanel.init("TOKEN");
+        isInit = true
+    }
+
     if (type === 'NEW_USER') {
         Mixpanel.identify(payload.id)
 
