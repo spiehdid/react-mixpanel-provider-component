@@ -1,6 +1,6 @@
 {
   "name": "react-mixpanel-provider-component",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "mixpanel provider",
   "source": "src/index.tsx",
   "main": "lib/index.js",
@@ -42,7 +42,8 @@
     "typescript": "^4.1.3"
   },
   "dependencies": {
-    "mixpanel-browser": "^2.38.0"
+    "mixpanel-browser": "^2.38.0",
+    "@types/mixpanel-browser": "^2.35.4"
   },
   "peerDependencies": {
     "react": ">=16.0.0"

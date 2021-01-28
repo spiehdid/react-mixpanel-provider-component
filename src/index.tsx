@@ -17,7 +17,7 @@ const MixPanelProvider = ({ children, token = '' }: { children: ReactNode; token
     if (!!token) {
       mixpanel.init(token);
     }
-  });
+  }, []);
   return <MixPanelContext.Provider value={{ mixpanel }}>{children}</MixPanelContext.Provider>;
 };
 
