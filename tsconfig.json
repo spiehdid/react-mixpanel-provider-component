@@ -3,11 +3,14 @@
     "target": "es5",
     "module": "es6",
     "jsx": "react",
+    "lib": ["ES2015"],
     "declaration": true,
     "outDir": "./lib",
     "strict": true,
-    "sourceMap": true,
-    "allowJs": true
+    "sourceMap": false,
+    "allowJs": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src"],
   "exclude": ["node_modules"]
