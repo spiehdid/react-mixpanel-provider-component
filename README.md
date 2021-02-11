@@ -15,12 +15,12 @@ Then use it like you would use [Context API](https://reactjs.org/docs/context.ht
 Render your app using `MixpanelProvider`
 
 ```jsx
-import { MixPanelProvider } from 'react-mixpanel-provider-component';
+import MixPanelProvider from 'react-mixpanel-provider-component';
 
 ReactDOM.render(
-  <MixpanelProvider token="xxxxxxxxxxxxxxxxx">
+  <MixPanelProvider token="xxxxxxxxxxxxxxxxx">
     <App />
-  </MixpanelProvider>,
+  </MixPanelProvider>,
   document.getElementById('root')
 );
 ```
