@@ -1,4 +1,4 @@
-import React, { createContext, useContext, ComponentType, FunctionComponent, useEffect, ReactNode } from 'react';
+import { createContext, useContext, ComponentType, FunctionComponent, ReactNode } from 'react';
 import mixpanel, { Mixpanel } from 'mixpanel-browser';
 
 interface WithMixPanel {
@@ -13,11 +13,9 @@ function withMixpanel<T>(Component: ComponentType<T>): FunctionComponent<T & Wit
 }
 
 const MixPanelProvider = ({ children, token = '' }: { children: ReactNode; token?: string }) => {
-  useEffect(() => {
-    if (!!token) {
-      mixpanel.init(token);
-    }
-  }, []);
+  if (!!token) {
+    mixpanel.init(token);
+  }
   return <MixPanelContext.Provider value={{ mixpanel }}>{children}</MixPanelContext.Provider>;
 };
 
