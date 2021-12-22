@@ -18,7 +18,12 @@ Render your app using `MixpanelProvider`
 import MixPanelProvider from 'react-mixpanel-provider-component';
 
 ReactDOM.render(
-  <MixPanelProvider token="xxxxxxxxxxxxxxxxx">
+  <MixPanelProvider token="xxxxxxxxxxxxxxxxx" config={{
+				api_host: process.env.REACT_PUBLIC_MIXPANEL_PROXY_DOMAIN,
+				cdn: process.env.REACT_PUBLIC_MIXPANEL_PROXY_DOMAIN,
+				app_host: process.env.REACT_PUBLIC_MIXPANEL_PROXY_DOMAIN,
+        debug: true
+	}}>
     <App />
   </MixPanelProvider>,
   document.getElementById('root')
