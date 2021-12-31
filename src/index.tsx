@@ -12,7 +12,15 @@ function withMixpanel<T>(Component: ComponentType<T>): FunctionComponent<T & Wit
   return (props: T) => <Component {...props} mixpanel={mixpanel} />;
 }
 
-const MixPanelProvider = ({ children, token = '', config = {} }: { children: ReactNode; token?: string; config?: Partial<Config> }) => {
+const MixPanelProvider = ({
+  children,
+  token = '',
+  config = {}
+}: {
+  children: ReactNode;
+  token?: string;
+  config?: Partial<Config>;
+}) => {
   if (!!token) {
     mixpanel.init(token, config);
   }
